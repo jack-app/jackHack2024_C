@@ -27,6 +27,7 @@ export class GameScene extends Phaser.Scene {
         // Can be defined on your own Scenes. Use it to load assets.
         // This method is called by the Scene Manager, after init() and before create(), only if the Scene has a LoaderPlugin.
         // After this method completes, if the LoaderPlugin's queue isn't empty, the LoaderPlugin will start automatically
+        this.load.plugin('rexinputtextplugin', 'https://raw.githubusercontent.com/rexrainbow/phaser3-rex-notes/master/dist/rexinputtextplugin.min.js', true);
     }
 
     create() {
@@ -36,7 +37,7 @@ export class GameScene extends Phaser.Scene {
         timer_text = this.add.text(16, 16, 'time: 60', { fontSize: '32px', fill: '#FFF' });
         timer_ID = setInterval(UpdateTime, 1000);
         //popup_list.push(new PushButtonPopup(this,0));
-        //popup_list.push(new CommandPopup(this,1));
+        popup_list.push(new CommandPopup(this,1));
         //popup_list[0].setPosition(100,100);
         //popup_list[1].setPosition(500,100);
 
