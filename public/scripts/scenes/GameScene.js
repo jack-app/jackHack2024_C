@@ -35,9 +35,10 @@ export class GameScene extends Phaser.Scene {
         // If the LoaderPlugin started after preload(), then this method is called only after loading is complete.
         timer_text = this.add.text(16, 16, 'time: 60', { fontSize: '32px', fill: '#FFF' });
         timer_ID = setInterval(UpdateTime, 1000);
-        popup_list.push(new PushButtonPopup(this,0));
-        popup_list.push(new CommandPopup(this,1));
-        popup_list[0].setPosition(300,0);
+        //popup_list.push(new PushButtonPopup(this,0));
+        //popup_list.push(new CommandPopup(this,1));
+        //popup_list[0].setPosition(100,100);
+        //popup_list[1].setPosition(500,100);
 
     }
 
