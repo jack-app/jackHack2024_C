@@ -9,7 +9,10 @@ var config = {
         width: 1280,
         height: 720,
     },
-    scene: [GameScene],
+    dom: {
+        createContainer: true
+    },
+    scene: [GameScene,StartScene],
 };
 //ゲームオブジェクトの生成
 var game = new Phaser.Game(config);

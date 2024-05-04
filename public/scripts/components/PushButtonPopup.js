@@ -1,3 +1,4 @@
+import Button from './Button.js';
 export default class PushButtonPopup extends Phaser.GameObjects.Container {
     constructor(scene,id) {
         super(scene, 0,0);
@@ -9,13 +10,35 @@ export default class PushButtonPopup extends Phaser.GameObjects.Container {
         this.limit = (5+Math.floor(Math.random()*5))*10;
         this.limit_txt = scene.add.text(85, 50, this.limit/10+'.'+this.limit%10, { fontSize: '16px', fill: '#FFF' });
         this.timer_ID=setInterval(this.#UpdateTime.bind(this), 100);
-        this.setInteractive();
+        this.button = new Button(scene, 85, 100, "Push", this.#Push.bind(this));
     }
     #UpdateTime() {
         this.limit--; // timeの更新   
         this.limit_txt.setText(Math.floor(this.limit/10)+'.'+this.limit%10);
         if (this.limit<=0) {
             clearInterval(this.timer_ID);
+            this.scene.scene.start("StartScene");
         }
+    }
+    #Push() {
+        if (this.limit<=10) {
+            console.log("correct");
+            clearInterval(this.timer_ID);
+            this.scene.scene.start("StartScene");
+        }
+        else{
+            console.log("incorrect");
+            clearInterval(this.timer_ID);
+            this.scene.scene.start("StartScene");
+        }
+    }
+
+    #Destory() {
+        this.scene.popup_list.splice(this,1);
+        this.graphics.destroy();
+        this.exp_txt.destroy();
+        this.limit_txt.destroy();
+        this.button.destroy();
+        this.destroy();
     }
 }

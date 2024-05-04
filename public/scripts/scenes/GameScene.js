@@ -3,7 +3,6 @@ import CommandPopup from "../components/CommandPopup.js";
 var timer_ID;
 var timer_text = "time: 60";
 var timer = 60;
-var popup_list = [];
 function UpdateTime() {
     timer--; // timeの更新   
     timer_text.setText('time: ' + timer); 
@@ -34,10 +33,11 @@ export class GameScene extends Phaser.Scene {
         // Can be defined on your own Scenes. Use it to create your game objects.
         // This method is called by the Scene Manager when the scene starts, after init() and preload().
         // If the LoaderPlugin started after preload(), then this method is called only after loading is complete.
+        this.popup_list = [];
         timer_text = this.add.text(16, 16, 'time: 60', { fontSize: '32px', fill: '#FFF' });
         timer_ID = setInterval(UpdateTime, 1000);
-        //popup_list.push(new PushButtonPopup(this,0));
-        popup_list.push(new CommandPopup(this,1));
+        this.popup_list.push(new PushButtonPopup(this,0));
+        //this.popup_list.push(new CommandPopup(this,1));
         //popup_list[0].setPosition(100,100);
         //popup_list[1].setPosition(500,100);
 
