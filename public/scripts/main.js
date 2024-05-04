@@ -1,4 +1,6 @@
 import { StartScene } from "./scenes/StartScene.js";
+import { MainScene } from "./scenes/MainScene.js";
+import { EndingScene } from "./scenes/EndingScene.js";
 
 //ゲームに関する設定
 var config = {
@@ -8,7 +10,7 @@ var config = {
         width: 1280,
         height: 720,
     },
-    scene: [StartScene],
+    scene: [StartScene,MainScene,EndingScene],
 };
 //ゲームオブジェクトの生成
 var game = new Phaser.Game(config);
