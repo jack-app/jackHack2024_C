@@ -1,5 +1,5 @@
-//import GameManager from "../components/GameManager.js";
 import PushButtonPopup from "../components/PushButtonPopup.js";
+import CommandPopup from "../components/CommandPopup.js";
 var timer_ID;
 var timer_text = "time: 60";
 var timer = 60;
@@ -36,6 +36,8 @@ export class GameScene extends Phaser.Scene {
         timer_text = this.add.text(16, 16, 'time: 60', { fontSize: '32px', fill: '#FFF' });
         timer_ID = setInterval(UpdateTime, 1000);
         popup_list.push(new PushButtonPopup(this,0));
+        popup_list.push(new CommandPopup(this,1));
+        popup_list[0].setPosition(300,0);
 
     }
 
