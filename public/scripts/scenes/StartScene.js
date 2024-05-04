@@ -25,10 +25,10 @@ export class StartScene extends Phaser.Scene {
         // Can be defined on your own Scenes. Use it to create your game objects.
         // This method is called by the Scene Manager when the scene starts, after init() and preload().
         // If the LoaderPlugin started after preload(), then this method is called only after loading is complete.
-        this.add.image(400,300,'CIA');
+        
         // ページの大きさを取得
         const { width, height } = this.game.canvas;
-
+        this.add.image(width/2, height/2, 'CIA');
 
         // フォントの設定
         const textStyle = {
