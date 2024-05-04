@@ -1,8 +1,9 @@
 //import GameManager from "../components/GameManager.js";
-
-var timer = 60;
+import PushButtonPopup from "../components/PushButtonPopup.js";
 var timer_ID;
-var timer_text;
+var timer_text = "time: 60";
+var timer = 60;
+var popup_list = [];
 function UpdateTime() {
     timer--; // timeの更新   
     timer_text.setText('time: ' + timer); 
@@ -34,6 +35,8 @@ export class GameScene extends Phaser.Scene {
         // If the LoaderPlugin started after preload(), then this method is called only after loading is complete.
         timer_text = this.add.text(16, 16, 'time: 60', { fontSize: '32px', fill: '#FFF' });
         timer_ID = setInterval(UpdateTime, 1000);
+        popup_list.push(new PushButtonPopup(this,0));
+
     }
 
     update() {
