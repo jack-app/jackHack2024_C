@@ -60,6 +60,21 @@ clearForeground() {
   this.foregroundLayer.removeAll();
 }
 
+// videoを再生する
+playVideo(x, y, texture) {
+  // videoのオブジェクトを作成
+  const video = this.scene.add.video(x, y, texture);
+  // videoを再生
+  video.play(true);
+  // 5秒待つ
+  this.scene.time.delayedCall(3000, () => {
+    // レイヤーからvideoを削除
+    video.destroy();
+  });
+}
+
+
+
 // 次のタイムラインを実行
 next() {
   // タイムラインがない場合は何もしない
@@ -129,6 +144,14 @@ next() {
       this.setChoiceButtons(timelineEvent.choices);
       
       break;
+    
+    case 'playVideo':  // 動画再生イベント
+      this.playVideo(timelineEvent.x, timelineEvent.y, timelineEvent.key);
+      this.next();  // すぐに次のタイムラインを実行する
+      break;
+  
+
+
     
 
 

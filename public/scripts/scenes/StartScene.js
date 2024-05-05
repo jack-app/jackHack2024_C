@@ -26,6 +26,16 @@ export class StartScene extends Phaser.Scene {
         var background = this.add.image(this.canvasWidth/2,this.canvasHeight/2,"background2");
         this.button = new StartButton(this);
         this.button.setPosition(640, 580);
+
+        const { width, height } = this.game.canvas;
+        const zone = this.add.zone(width/2, height/2, width, height);
+      zone.setInteractive({
+        useHandCursor: true
+      });
+      zone.on('pointerdown', () => {
+        this.scene.start('Case1');  // TitleSceneに遷移
+      });
+
     }
 
     update() {

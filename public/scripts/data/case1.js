@@ -81,22 +81,21 @@ export const timelineData = {
     {type: 'dialog', text: 'さあ最後の決戦だ', actorName: 'ジョージ'},
     {type:'dialog', text: '「さあ受けてたとうじゃないか！最後の決戦だ！', actorName: 'ナキ'},
     // 最後のイベント
-    {type: 'timelineTransition', timelineID: 'case3_loss'},
+    {type: 'timelineTransition', timelineID: 'case3_win'},
   ],
   case3_win:[
     {type:'addForeground', x: 400, y: 300, key: 'case3_6'},
     {type: 'dialog', text: '危機感を持った方が良かったのはお前の方だったようだなァッ！！！ジョージーーーッッッ！！！」', actorName: 'ナキ'},
     // ジョージ爆発
-  ],
-  case3_loss:[
-  {type:'setBackground', x: 400, y: 300, key: 'case3_7'},
-  {type: 'dialog', text: '（危機感カンスト）'},
-  {type: 'dialog', text: 'それからというもの樹木ナキは国民栄誉賞に選ばれ、モテモテになった。'},
-  {type:'addForeground', x: 400, y: 300, key: 'case3_8'},
-  {type: 'dialog', text: '「俺の人生薔薇色だぜぇ～いッ！！最高に『ハイ！』ってやつだアアアアア！」', actorName: 'ナキ'},
-  {type: 'dialog', text: '（こうして危機感が次第に薄れていく）', actorName: 'ナキ'},
-  {type: 'dialog', text: '（危機感0％） to be continued ', actorName: 'ナキ'},
-  {type: 'sceneTransition', key: 'case1'}
+    {type: 'playVideo', x: 400, y: 300, key: 'fire'},
+    {type:'addForeground', x: 400, y: 300, key: 'case3_7'},
+    {type: 'dialog', text: '（危機感カンスト）'},
+    {type: 'dialog', text: 'それからというもの樹木ナキは国民栄誉賞に選ばれ、モテモテになった。'},
+    {type:'addForeground', x: 400, y: 300, key: 'case3_8'},
+    {type: 'dialog', text: '「俺の人生薔薇色だぜぇ～いッ！！最高に『ハイ！』ってやつだアアアアア！」', actorName: 'ナキ'},
+    {type: 'dialog', text: '（こうして危機感が次第に薄れていく）', actorName: 'ナキ'},
+    {type: 'dialog', text: '（危機感0％） to be continued ', actorName: 'ナキ'},
+    {type: 'sceneTransition', key: 'case1'}
   ],
   case3_loss:[
     {type: 'setBackground', x: 400, y: 300, key: 'case3_5'},
