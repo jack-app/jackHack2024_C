@@ -17,20 +17,22 @@ export const timelineData = {
     {type: 'dialog', text:'ぽちっ'},
     {type: 'addForeground', x: 400, y: 300, key: 'case1_5'},
     {type: 'dialog', text:'「しまったぁっ！詐欺サイトに引っかかってしまったッ！」', actorName: 'ナキ'},
-    {type: 'timelineTransition', timelineID: 'case2'},
+    {type: 'playGame'},
   ],
   case1_win: [
     {type: 'setBackground', x: 400, y: 300, key: 'case1_6'},
     {type: 'dialog', text: '「もしかして俺って結構すごい？でも海外ショッピングサイトにはもう行かなーい！」', actorName: 'ナキ'},
     {type:'dialog', text: '（危機感10％）', actorName: 'ナキ'},
     {type:'dialog', text: 'いい子の皆さんはこういうサイトには気をつけましょう…', actorName: 'ナキ'},
+    {type: 'timelineTransition', timelineID: 'case2'},
   ],
-  case1_loss:[
+  case1_lose:[
     {type: 'setBackground', x: 400, y: 300, key: 'case1_7'},
     {type: 'dialog', text: '樹木ナキはこうして個人情報とお金が抜き取られてしまった。'},
     {type: 'dialog', text:'架空の請求が毎日来て、借金の返済に明け暮れる。' },
     {type: 'dialog', text:'「あの人簡単な詐欺に引っかかったらしいよ！ダッサーい！！」',key: '気になるあの子'},
-    {type:'dialog', text: '気になるあの子にも嫌われてしまい…こうしてモテとは程遠くなってしまった…'}
+    {type:'dialog', text: '気になるあの子にも嫌われてしまい…こうしてモテとは程遠くなってしまった…'},
+    {type: 'timelineTransition', timelineID: 'case1'},
   ],
   case2: [
     {type: 'setBackground', x: 400, y: 300, key: 'case2_1'},
@@ -46,15 +48,16 @@ export const timelineData = {
     {type: 'dialog', text: '助けなければいけないな！！」', actorName: 'ナキ'},
     {type:'addForeground', x: 400, y: 300, key: 'case2_3'},
     {type: 'dialog', text: '「しまったァァッ！詐欺サイトに引っかかってしまったッッ！！！」', actorName: 'ナキ'},
-    {type: 'timelineTransition', timelineID: 'case3'},
+    {type: 'playGame'},
   ],
   case2_win:[
     {type: 'setBackground', x: 400, y: 300, key: 'case2_4'},
     {type: 'dialog', text: 'なんとか詐欺の被害を免れることができた。'},
     {type: 'dialog', text: '「「良かった、大事なバイト代が吹っ飛ぶところだった！」（危機感70％）', actorName: 'ナキ'},
     {type: 'dialog', text: '後日、今回の詐欺についてネットで調べてみたところ、たくさんの人が自分と同じ詐欺事件に遭っており、自分以外の人は全員お金を取られてしまったようだ。'},
+    {type: 'timelineTransition', timelineID: 'case3'},
   ],
-  case2_loss:[
+  case2_lose:[
     {type: 'setBackground', x: 400, y: 300, key: 'case2_5'},
     {type: 'dialog', text: '樹木ナキはこうして個人情報とお金が抜き取られてしまった。'},
     {type: 'dialog', text:'架空の請求が毎日来て、借金の返済に明け暮れる。' },
@@ -63,6 +66,7 @@ export const timelineData = {
     {type:'dialog', text:'もうこうなってしまっては、ジョージの言っていたモテる、モテないとかいうレベルの話ではない。' },
     {type:'dialog', text:'樹木ナキ「くっそーーーーーー！！！」（大文字で）'},
     {type:'dialog', text:' to be continued….' },
+    {type: 'timelineTransition', timelineID: 'case2'},
   ],
   case3 :[
     {type: 'setBackground', x: 400, y: 300, key: 'case3_1'},
@@ -81,27 +85,26 @@ export const timelineData = {
     {type: 'dialog', text: 'さあ最後の決戦だ', actorName: 'ジョージ'},
     {type:'dialog', text: '「さあ受けてたとうじゃないか！最後の決戦だ！', actorName: 'ナキ'},
     // 最後のイベント
-    {type: 'timelineTransition', timelineID: 'case3_loss'},
+    {type: 'playGame'},
   ],
   case3_win:[
     {type:'addForeground', x: 400, y: 300, key: 'case3_6'},
     {type: 'dialog', text: '危機感を持った方が良かったのはお前の方だったようだなァッ！！！ジョージーーーッッッ！！！」', actorName: 'ナキ'},
     // ジョージ爆発
+    {type:'setBackground', x: 400, y: 300, key: 'case3_7'},
+    {type: 'dialog', text: '（危機感カンスト）'},
+    {type: 'dialog', text: 'それからというもの樹木ナキは国民栄誉賞に選ばれ、モテモテになった。'},
+    {type:'addForeground', x: 400, y: 300, key: 'case3_8'},
+    {type: 'dialog', text: '「俺の人生薔薇色だぜぇ～いッ！！最高に『ハイ！』ってやつだアアアアア！」', actorName: 'ナキ'},
+    {type: 'dialog', text: '（こうして危機感が次第に薄れていく）', actorName: 'ナキ'},
+    {type: 'dialog', text: '（危機感0％） to be continued ', actorName: 'ナキ'},
+    {type: 'timelineTransition', key: 'case1'}
   ],
-  case3_loss:[
-  {type:'setBackground', x: 400, y: 300, key: 'case3_7'},
-  {type: 'dialog', text: '（危機感カンスト）'},
-  {type: 'dialog', text: 'それからというもの樹木ナキは国民栄誉賞に選ばれ、モテモテになった。'},
-  {type:'addForeground', x: 400, y: 300, key: 'case3_8'},
-  {type: 'dialog', text: '「俺の人生薔薇色だぜぇ～いッ！！最高に『ハイ！』ってやつだアアアアア！」', actorName: 'ナキ'},
-  {type: 'dialog', text: '（こうして危機感が次第に薄れていく）', actorName: 'ナキ'},
-  {type: 'dialog', text: '（危機感0％） to be continued ', actorName: 'ナキ'},
-  {type: 'sceneTransition', key: 'case1'}
-  ],
-  case3_loss:[
+  case3_lose:[
     {type: 'setBackground', x: 400, y: 300, key: 'case3_5'},
-    {type:'dialog', text:'これ結構大げさって思われる可能性が高いんだけどスポーツ経験がない男、今まであんまり運動経験がない男、部活に入った経験がない男、俺ガチで危機感持った方がいいと思うよ、うんガチで危機感持った方が良いよ、うんガチで危機感持った方が良い、俺は俺はスポーツ向いてないから運動神経無いから家に引きこもってる方が楽しいから、俺はゲームが好きだから俺は遊戯王プレイヤーだから、やばいって何がヤバイかっていうと男として成熟しないんだよね。その人生の中で何かしらの競争をしてないと男として成熟するためのパーツにかける。最後に競争したのいつ、ほかの男と戦ったの、いつ監督に理不尽なこと言われたの、いつお前つかえないって言われてベンチされたいないでしょ。。'}
-    
+    {type:'dialog', text:'これ結構大げさって思われる可能性が高いんだけどスポーツ経験がない男、今まであんまり運動経験がない男、部活に入った経験がない男、俺ガチで危機感持った方がいいと思うよ、うんガチで危機感持った方が良いよ、うんガチで危機感持った方が良い、俺は俺はスポーツ向いてないから運動神経無いから家に引きこもってる方が楽しいから、俺はゲームが好きだから俺は遊戯王プレイヤーだから、やばいって何がヤバイかっていうと男として成熟しないんだよね。その人生の中で何かしらの競争をしてないと男として成熟するためのパーツにかける。最後に競争したのいつ、ほかの男と戦ったの、いつ監督に理不尽なこと言われたの、いつお前つかえないって言われてベンチされたいないでしょ。。'},
+    {type: 'timelineTransition', timelineID: 'case3'},
+
   ]
 
 

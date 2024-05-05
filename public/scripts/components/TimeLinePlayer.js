@@ -95,6 +95,7 @@ next() {
 
     case 'setBackground':  // 背景設定イベント
       this.setBackground(timelineEvent.x, timelineEvent.y, timelineEvent.key);
+      console.log(timelineEvent.key);
       this.next();  // すぐに次のタイムラインを実行する
       break;
   
@@ -129,6 +130,8 @@ next() {
       this.setChoiceButtons(timelineEvent.choices);
       
       break;
+    case 'playGame':
+      this.scene.scene.start('GameScene');
     
 
 
