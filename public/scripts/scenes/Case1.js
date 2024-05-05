@@ -1,7 +1,7 @@
 
 import {timelineData} from '../data/case1.js';
 import { DialogBox } from '../components/DialogBox.js';
-import { TimelinePlayer } from '../components/TimelinePlayer.js';
+import { TimelinePlayer } from '../components/TimeLinePlayer.js';
 
 export class MainScene extends Phaser.Scene {
     constructor() {

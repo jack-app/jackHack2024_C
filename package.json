@@ -18,6 +18,7 @@
   },
   "homepage": "https://github.com/jack-app/jackHack2024_C#readme",
   "dependencies": {
+    "phaser3-rex-plugins": "^1.60.1",
     "phaser": "^3.80.1"
   }
 }
