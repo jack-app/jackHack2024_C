@@ -23,8 +23,8 @@ export class GameScene extends Phaser.Scene {
         // After this method completes, if the LoaderPlugin's queue isn't empty, the LoaderPlugin will start automatically
         this.load.plugin('rexinputtextplugin', 'https://raw.githubusercontent.com/rexrainbow/phaser3-rex-notes/master/dist/rexinputtextplugin.min.js', true);
         this.load.image("background", "scripts/images/game-scene-background.png");
-        this.audio = new Audio("scripts/audio/警報05.mp3");
-
+        this.audio = new Audio("scripts/audio/警告05.mp3");
+        this.audio2 = new Audio("scripts/audio/警報04.mp3");
     }
 
     create() {
@@ -52,6 +52,9 @@ export class GameScene extends Phaser.Scene {
             timer_text.setColor('#FF3F3F');
             timer_text.setFontSize('45px');
             this.audio.play();
+        }
+        else if(timer ==5){
+            this.audio2.play();
         }
         else if(timer%5==0){
             this.CreatePopup();
