@@ -11,7 +11,7 @@ export default class PushButtonPopup extends Phaser.GameObjects.Container {
         this.limit_txt = scene.add.text(-75, 0, this.limit/10+'.'+this.limit%10, { fontSize: '16px', fill: '#FFF' });
         this.add(this.limit_txt);
         this.timer_ID=setInterval(this.#UpdateTime.bind(this), 100);
-        this.button = new Button(scene, 0, 50, "Push", this.#Push.bind(this));
+        this.button = new Button(scene, 0, 45, "Push", this.#Push.bind(this));
         this.add(this.button);
         this.setSize(300,150);
         this.setInteractive();
