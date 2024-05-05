@@ -22,9 +22,9 @@ export class GameScene extends Phaser.Scene {
         // This method is called by the Scene Manager, after init() and before create(), only if the Scene has a LoaderPlugin.
         // After this method completes, if the LoaderPlugin's queue isn't empty, the LoaderPlugin will start automatically
         this.load.plugin('rexinputtextplugin', 'https://raw.githubusercontent.com/rexrainbow/phaser3-rex-notes/master/dist/rexinputtextplugin.min.js', true);
-        this.load.image("background", "scripts/images/game-scene-background.png");
-        this.audio = new Audio("scripts/audio/警告05.mp3");
-        this.audio2 = new Audio("scripts/audio/警報04.mp3");
+        this.load.image("background", "images/game-scene-background.png");
+        this.audio = new Audio("audio/警告05.mp3");
+        this.audio2 = new Audio("audio/警報04.mp3");
     }
 
     create() {

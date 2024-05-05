@@ -1,4 +1,3 @@
-
 export class TimelinePlayer{
   
   constructor(scene, dialogBox, textStyle) {  
