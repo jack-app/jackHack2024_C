@@ -41,7 +41,7 @@ export class StartScene extends Phaser.Scene {
     });
     // ポイントゾーンをクリックしたときの処理
     zone.on('pointerdown', () => {
-        this.scene.start('MainScene');  // MainSceneに遷移
+        this.scene.start('Case1');  // MainSceneに遷移
     });
 
     }

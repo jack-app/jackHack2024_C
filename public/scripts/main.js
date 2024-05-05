@@ -1,5 +1,5 @@
 import { StartScene } from "./scenes/StartScene.js";
-import { MainScene } from "./scenes/MainScene.js";
+import { MainScene } from "./scenes/Case1.js";
 import { EndingScene } from "./scenes/EndingScene.js";
 
 //ゲームに関する設定

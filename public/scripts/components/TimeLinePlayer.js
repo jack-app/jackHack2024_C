@@ -5,9 +5,11 @@ export class TimelinePlayer{
     // 背景レイヤー・前景レイヤー・UIレイヤーをコンテナを使って表現
     this.scene = scene;
     this.textStyle = textStyle;
+    this.dialogBox = dialogBox;
+
     this.backgroundLayer = this.scene.add.container(0, 0);
     this.foregroundLayer = this.scene.add.container(0, 0);
-    this.dialogBox = dialogBox;
+    
     this.scene.add.existing(dialogBox);  // ダイアログボックスは前景レイヤーとUIレイヤーの間に配置
     this.uiLayer = scene.add.container(0, 0);
 
@@ -157,7 +159,9 @@ next() {
       break;
 
     case 'choice':  // 選択肢イベント
+      console.log(timelineEvent.choices);
       this.setChoiceButtons(timelineEvent.choices);
+      
       break;
 
     default:
