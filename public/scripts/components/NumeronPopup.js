@@ -5,14 +5,16 @@ export default class NumeronPopup extends Phaser.GameObjects.Container {
         this.scene = scene;
         this.n=3;
         this.#initAns();
-        this.graphics = scene.add.rectangle(0, 0, 300, 150, 0xFF3F3F);
+        this.graphics = scene.add.rectangle(0, 0, 300, 150, 0xFFD800);
         this.add(this.graphics);
-        this.title = scene.add.text(-75, -50,"Numeron", { fontSize: '16px', fill: '#FFF' });
+        this.inputbackgrpund = scene.add.rectangle(0, 20, 200, 20, 0x000000);
+        this.add(this.inputbackgrpund);
+        this.title = scene.add.text(-75, -50,"Numeron", { fontSize: '16px', fill: '#000000' });
         this.add(this.title);
         this.exp_string = " ";
-        this.exp_txt = scene.add.text(-75, -25, this.exp_string, { fontSize: '16px', fill: '#FFF' });
+        this.exp_txt = scene.add.text(-75, -25, this.exp_string, { fontSize: '16px', fill: '#000000' });
         this.add(this.exp_txt);
-        this.inputText = scene.add.rexInputText(0, 0, 200, 50);
+        this.inputText = scene.add.rexInputText(0, 20, 200, 50);
         this.add(this.inputText);
         this.inputText.on('keydown', (inputText, e) => {
             if (e.key === 'Enter') {

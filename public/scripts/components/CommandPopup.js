@@ -8,6 +8,8 @@ export default class CommandPopup extends Phaser.GameObjects.Container {
         this.add(this.graphics);
         this.exp_txt = scene.add.text(-75, -50, "type: "+this.keyphrase, { fontSize: '16px', fill: '#FFF' });
         this.add(this.exp_txt);
+        this.inputbackgrpund = scene.add.rectangle(0, 0, 200, 20, 0x000000);
+        this.add(this.inputbackgrpund);
         this.inputText = scene.add.rexInputText(0, 0, 200, 50);
         this.add(this.inputText);
         this.inputText.on('keydown', (inputText, e) => {
