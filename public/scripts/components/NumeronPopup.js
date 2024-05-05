@@ -9,10 +9,12 @@ export default class NumeronPopup extends Phaser.GameObjects.Container {
         this.add(this.graphics);
         this.inputbackgrpund = scene.add.rectangle(0, 20, 200, 20, 0x000000);
         this.add(this.inputbackgrpund);
-        this.title = scene.add.text(-75, -50,"Numeron", { fontSize: '16px', fill: '#000000' });
+        this.title = scene.add.text(0, -50,"Numeron", { fontSize: '16px', fill: '#000000' });
+        this.title.setOrigin(0.5);
         this.add(this.title);
         this.exp_string = " ";
-        this.exp_txt = scene.add.text(-75, -25, this.exp_string, { fontSize: '16px', fill: '#000000' });
+        this.exp_txt = scene.add.text(0, -20, this.exp_string, { fontSize: '16px', fill: '#000000' });
+        this.exp_txt.setOrigin(0.5);
         this.add(this.exp_txt);
         this.inputText = scene.add.rexInputText(0, 20, 200, 50);
         this.add(this.inputText);
@@ -29,7 +31,7 @@ export default class NumeronPopup extends Phaser.GameObjects.Container {
             gameObject.y = dragY
         })
     }
-    #Destory() {
+    Destoroy() {
         this.scene.popup_list.splice(this,1);
         this.destroy();
     }
@@ -74,7 +76,7 @@ export default class NumeronPopup extends Phaser.GameObjects.Container {
         }
         if (eat == 3) {
             this.exp_txt.setText("正解");
-            this.#Destory();
+            this.Destoroy();
         }
         else {
             var exp_string = eat+"EAT "+bite+"BITE";

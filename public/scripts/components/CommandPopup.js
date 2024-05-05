@@ -3,10 +3,12 @@ export default class CommandPopup extends Phaser.GameObjects.Container {
         super(scene,0,0);
         this.setPosition(0,0);
         this.scene = scene;
-        this.keyphrase = "rm -rf /";
+        var phraselist = ["rm -rf /","python3 hoge.py","git commit -m 'a'","touch test.txt","gcc -o huga huga.c","docker compose up -d"];
+        this.keyphrase = phraselist[Math.floor(Math.random()*phraselist.length)];
         this.graphics = scene.add.rectangle(0, 0, 300, 150, 0xFF3F3F);
         this.add(this.graphics);
-        this.exp_txt = scene.add.text(-75, -50, "type: "+this.keyphrase, { fontSize: '16px', fill: '#FFF' });
+        this.exp_txt = scene.add.text(0, -50, "type: "+this.keyphrase, { fontSize: '16px', fill: '#FFF' });
+        this.exp_txt.setOrigin(0.5);
         this.add(this.exp_txt);
         this.inputbackgrpund = scene.add.rectangle(0, 0, 200, 20, 0x000000);
         this.add(this.inputbackgrpund);
@@ -16,7 +18,7 @@ export default class CommandPopup extends Phaser.GameObjects.Container {
             if (e.key === 'Enter') {
                 if (inputText.text == this.keyphrase) {
                     console.log("correct");
-                    this.#Destory();
+                    this.Destoroy();
                 }
             }
         })
@@ -28,7 +30,7 @@ export default class CommandPopup extends Phaser.GameObjects.Container {
             gameObject.y = dragY
         })
     }
-    #Destory() {
+    Destoroy() {
         this.scene.popup_list.splice(this,1);
         this.destroy();
     }
