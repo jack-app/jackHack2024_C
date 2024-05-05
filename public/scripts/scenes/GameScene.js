@@ -3,14 +3,6 @@ import CommandPopup from "../components/CommandPopup.js";
 var timer_ID;
 var timer_text = "time: 60";
 var timer = 60;
-function UpdateTime() {
-    timer--; // timeの更新   
-    timer_text.setText('time: ' + timer); 
-    console.log(timer);
-    if (timer==0) {
-        clearInterval(timer_ID);
-    }
-}
 
 export class GameScene extends Phaser.Scene {
     constructor() {
@@ -20,6 +12,8 @@ export class GameScene extends Phaser.Scene {
     init() {
         // Can be defined on your own Scenes.
         // This method is called by the Scene Manager when the scene starts, before preload() and create().
+        this.canvasWidth = this.sys.canvas.width;
+        this.canvasHeight = this.sys.canvas.height;
     }
 
     preload() {
@@ -35,16 +29,38 @@ export class GameScene extends Phaser.Scene {
         // If the LoaderPlugin started after preload(), then this method is called only after loading is complete.
         this.popup_list = [];
         timer_text = this.add.text(16, 16, 'time: 60', { fontSize: '32px', fill: '#FFF' });
-        timer_ID = setInterval(UpdateTime, 1000);
-        this.popup_list.push(new PushButtonPopup(this,0));
-        //this.popup_list.push(new CommandPopup(this,1));
-        //popup_list[0].setPosition(100,100);
-        //popup_list[1].setPosition(500,100);
-
+        timer_ID = setInterval(this.UpdateTime.bind(this), 1000);
     }
 
     update() {
         // https://photonstorm.github.io/phaser3-docs/Phaser.Scene.html#update
+    }
+
+    UpdateTime() {
+        timer--; // timeの更新   
+        timer_text.setText('time: ' + timer); 
+        console.log(timer);
+        if (timer==0) {
+            clearInterval(timer_ID);
+        }
+        else if(timer%2==0){
+            this.CreatePopup();
+        }
+    }
+
+    CreatePopup() {
+        var random = Math.floor(Math.random() * 10);
+        var x = Math.floor(Math.random()*this.canvasWidth/2);
+        var y = 100+Math.floor(Math.random()*this.canvasHeight/2);
+        var popup;
+        if (random < 5) {
+            popup=new PushButtonPopup(this,x,y);
+            this.popup_list.push(popup);
+        }
+        else {
+            popup=new CommandPopup(this,x,y);
+            this.popup_list.push(popup);
+        }
     }
 }
 

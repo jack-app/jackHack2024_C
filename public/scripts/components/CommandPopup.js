@@ -1,9 +1,8 @@
 export default class CommandPopup extends Phaser.GameObjects.Container {
-    constructor(scene,id) {
-        super(scene, 0,0);
-        this.setPosition(0,0);
+    constructor(scene,x,y) {
+        super(scene,x,y);
+        this.setPosition(x, y);
         this.scene = scene;
-        this.id = id;
         this.keyphrase = "rm -rf /";
         this.graphics = scene.add.graphics();
         this.graphics.fillStyle(0xFF3F3F, 1).fillRect(0, 0, 300, 150);
@@ -17,6 +16,9 @@ export default class CommandPopup extends Phaser.GameObjects.Container {
                 }
             }
         })
+        this.setSize(300,150);
+        this.#SetPos(x,y);
+        this.setInteractive();
     }
     #Destory() {
         this.scene.popup_list.splice(this,1);
@@ -24,5 +26,11 @@ export default class CommandPopup extends Phaser.GameObjects.Container {
         this.exp_txt.destroy();
         this.inputText.destroy();
         this.destroy();
+    }
+
+    #SetPos(x,y){
+        this.graphics.setPosition(x,y);
+        this.exp_txt.setPosition(x+85,y+20);
+        this.inputText.setPosition(x+150,y+75);
     }
 }
