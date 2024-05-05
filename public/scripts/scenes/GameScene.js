@@ -103,6 +103,7 @@ export class GameScene extends Phaser.Scene {
         }
     }
     ToNextScene() {
+        clearInterval(timer_ID);
         this.audio.pause();
         this.audio2.pause();
         SetGameCount(game_count+1);
@@ -111,6 +112,7 @@ export class GameScene extends Phaser.Scene {
         if(game_count == 4) this.scene.start('Case1', {timelineID:'case3_win'});
     }
     ToPreviousScene() {
+        clearInterval(timer_ID);
         this.audio.pause();
         this.audio2.pause();
         if(game_count == 1) this.scene.start('Case1', {timelineID:'case1_lose'});
