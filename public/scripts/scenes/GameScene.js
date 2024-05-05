@@ -1,9 +1,10 @@
 import PushButtonPopup from "../components/PushButtonPopup.js";
 import CommandPopup from "../components/CommandPopup.js";
 import NumeronPopup from "../components/NumeronPopup.js";
+import { game_count, SetGameCount} from "../main.js";
 var timer_ID;
 var timer_text = "time: 60";
-var timer = 15;
+var timer = 16;
 
 export class GameScene extends Phaser.Scene {
     constructor() {
@@ -15,6 +16,9 @@ export class GameScene extends Phaser.Scene {
         // This method is called by the Scene Manager when the scene starts, before preload() and create().
         this.canvasWidth = this.sys.canvas.width;
         this.canvasHeight = this.sys.canvas.height;
+        timer_ID;
+        timer_text = "time: 60";
+        timer = 16;
     }
 
     preload() {
@@ -22,9 +26,9 @@ export class GameScene extends Phaser.Scene {
         // This method is called by the Scene Manager, after init() and before create(), only if the Scene has a LoaderPlugin.
         // After this method completes, if the LoaderPlugin's queue isn't empty, the LoaderPlugin will start automatically
         this.load.plugin('rexinputtextplugin', 'https://raw.githubusercontent.com/rexrainbow/phaser3-rex-notes/master/dist/rexinputtextplugin.min.js', true);
-        this.load.image("background", "scripts/images/game-scene-background.png");
-        this.audio = new Audio("scripts/audio/警告05.mp3");
-        this.audio2 = new Audio("scripts/audio/警報04.mp3");
+        this.load.image("background", "images/game-scene-background.png");
+        this.audio = new Audio("audio/警告05.mp3");
+        this.audio2 = new Audio("audio/警報04.mp3");
     }
 
     create() {
@@ -47,6 +51,12 @@ export class GameScene extends Phaser.Scene {
         console.log(timer);
         if (timer==0) {
             clearInterval(timer_ID);
+            if(this.popup_list.length>0){
+                this.ToPreviousScene();
+            }
+            else{
+                this.ToNextScene();
+            }
         }
         else if(timer ==10){
             timer_text.setColor('#FF3F3F');
@@ -84,6 +94,21 @@ export class GameScene extends Phaser.Scene {
             this.add.existing(popup);
             this.popup_list.push(popup);
         }
+    }
+    ToNextScene() {
+        this.audio.pause();
+        this.audio2.pause();
+        SetGameCount(game_count+1);
+        if(game_count == 2) this.scene.start('Case1', {timelineID:'case1_win'});
+        if(game_count == 3) this.scene.start('Case1', {timelineID:'case2_win'});
+        if(game_count == 4) this.scene.start('Case1', {timelineID:'case3_win'});
+    }
+    ToPreviousScene() {
+        this.audio.pause();
+        this.audio2.pause();
+        if(game_count == 1) this.scene.start('Case1', {timelineID:'case1_lose'});
+        if(game_count == 2) this.scene.start('Case1', {timelineID:'case2_lose'});
+        if(game_count == 3) this.scene.start('Case1', {timelineID:'case3_lose'});
     }
 }
 
