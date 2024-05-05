@@ -1,5 +1,6 @@
 import PushButtonPopup from "../components/PushButtonPopup.js";
 import CommandPopup from "../components/CommandPopup.js";
+import NumeronPopup from "../components/NumeronPopup.js";
 var timer_ID;
 var timer_text = "time: 60";
 var timer = 60;
@@ -43,23 +44,30 @@ export class GameScene extends Phaser.Scene {
         if (timer==0) {
             clearInterval(timer_ID);
         }
-        else if(timer%10==0){
+        else if(timer%5==0){
             this.CreatePopup();
         }
     }
 
     CreatePopup() {
+        var random = Math.random();
         var x = 150+Math.floor(Math.random()*(this.canvasWidth-150));
         var y = 100+Math.floor(Math.random()*(this.canvasHeight-175));
         var popup;
-        if (Math.random() < 0.5){
+        if (random==0){
             popup=new PushButtonPopup(this,x,y);
             popup.setPosition(x,y);
             this.add.existing(popup);
             this.popup_list.push(popup);
         }
-        else {
+        else if (random==1){
             popup=new CommandPopup(this,x,y);
+            popup.setPosition(x,y);
+            this.add.existing(popup);
+            this.popup_list.push(popup);
+        }
+        else{
+            popup=new NumeronPopup(this,x,y);
             popup.setPosition(x,y);
             this.add.existing(popup);
             this.popup_list.push(popup);
