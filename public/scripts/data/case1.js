@@ -85,13 +85,15 @@ export const timelineData = {
     {type: 'dialog', text: 'さあ最後の決戦だ', actorName: 'ジョージ'},
     {type:'dialog', text: '「さあ受けてたとうじゃないか！最後の決戦だ！', actorName: 'ナキ'},
     // 最後のイベント
+    {type: 'timelineTransition', timelineID: 'case3_win'},
     {type: 'playGame'},
   ],
   case3_win:[
     {type:'addForeground', x: 400, y: 300, key: 'case3_6'},
     {type: 'dialog', text: '危機感を持った方が良かったのはお前の方だったようだなァッ！！！ジョージーーーッッッ！！！」', actorName: 'ナキ'},
     // ジョージ爆発
-    {type:'setBackground', x: 400, y: 300, key: 'case3_7'},
+    {type: 'playVideo', x: 400, y: 300, key: 'fire'},
+    {type:'addForeground', x: 400, y: 300, key: 'case3_7'},
     {type: 'dialog', text: '（危機感カンスト）'},
     {type: 'dialog', text: 'それからというもの樹木ナキは国民栄誉賞に選ばれ、モテモテになった。'},
     {type:'addForeground', x: 400, y: 300, key: 'case3_8'},

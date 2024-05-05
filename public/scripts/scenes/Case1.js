@@ -50,7 +50,8 @@ export class MainScene extends Phaser.Scene {
         this.load.image('case3_6', 'images/case3_6.jpeg');
         this.load.image('case3_7', 'images/case3_7.png');
         this.load.image('case3_8', 'images/case3_8.jpeg');
-    }
+        this.load.video('fire', 'video/fire.mp4');
+    };
   
     create() {
       if (!this.timeline) {
@@ -85,4 +86,4 @@ export class MainScene extends Phaser.Scene {
       // タイムラインの再生開始
       timelinePlayer.start(this.timeline);
     }
-  }
+  };
