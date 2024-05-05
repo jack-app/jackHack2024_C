@@ -43,22 +43,25 @@ export class GameScene extends Phaser.Scene {
         if (timer==0) {
             clearInterval(timer_ID);
         }
-        else if(timer%2==0){
+        else if(timer%10==0){
             this.CreatePopup();
         }
     }
 
     CreatePopup() {
-        var random = Math.floor(Math.random() * 10);
-        var x = Math.floor(Math.random()*this.canvasWidth/2);
-        var y = 100+Math.floor(Math.random()*this.canvasHeight/2);
+        var x = 150+Math.floor(Math.random()*(this.canvasWidth-150));
+        var y = 100+Math.floor(Math.random()*(this.canvasHeight-175));
         var popup;
-        if (random < 5) {
+        if (Math.random() < 0.5){
             popup=new PushButtonPopup(this,x,y);
+            popup.setPosition(x,y);
+            this.add.existing(popup);
             this.popup_list.push(popup);
         }
         else {
             popup=new CommandPopup(this,x,y);
+            popup.setPosition(x,y);
+            this.add.existing(popup);
             this.popup_list.push(popup);
         }
     }
