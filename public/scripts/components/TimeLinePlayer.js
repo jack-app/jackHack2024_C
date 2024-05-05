@@ -46,6 +46,7 @@ setBackground(x, y, texture) {
   this.backgroundLayer.add(backgroundImage);
 }
 
+
 // 前景画面をセット
 addForeground(x, y, texture) {
   // 前景画像のオブジェクトを作成
@@ -60,56 +61,18 @@ clearForeground() {
   this.foregroundLayer.removeAll();
 }
 
- // 選択肢ボタンをセット
- setChoiceButtons(choices) {
-  if (choices.length === 0) {
-    return;
-  }
-  this.hitArea.disableInteractive();  // hitAreaのクリックを無効化
-
-  // ボタンを中央に配置するようにボタングループのY原点を計算
-  const buttonHeight = 40,
-        buttonMargin = 40;
-  const { width, height } = this.scene.game.canvas;
-  const buttonGroupHeight = buttonHeight * choices.length + buttonMargin * (choices.length - 1);
-  const buttonGroupOriginY = height/2 - buttonGroupHeight/2;
-
-  choices.forEach((choice, index) => {
-    const y = buttonGroupOriginY + buttonHeight * (index + 0.5) + buttonMargin * (index);
-
-    // Rectangleでボタンを作成
-    const button = new Phaser.GameObjects.Rectangle(this.scene, width/2, y, width - buttonMargin*2, buttonHeight, 0x000000).setStrokeStyle(1, 0xffffff);
-    button.setInteractive({
-      useHandCursor: true
-    });
-
-    // マウスオーバーで色が変わるように設定
-    button.on('pointerover', () => {
-      button.setFillStyle(0x333333);
-    });
-    button.on('pointerout', () => {
-      button.setFillStyle(0x000000);
-    });
-
-    // ボタンクリックでシーンをリスタートし、指定のタイムラインを実行する
-    button.on('pointerdown', () => {
-      // restart()の引数がシーンのinit()の引数に渡される
-      this.scene.scene.restart({ timelineID: choice.timelineID });
-    });
-
-    // ボタンをUIレイヤーに追加
-    this.uiLayer.add(button);
-
-    // ボタンテキストを作成
-    const buttonText = new Phaser.GameObjects.Text(this.scene, width/2, y, choice.text, textStyle).setOrigin(0.5);
-
-    // ボタンテキストをUIレイヤーに追加
-    this.uiLayer.add(buttonText);
-  });
-}
 // 次のタイムラインを実行
 next() {
-  this.scene.timelineIndex = this.scene.timelineIndex || 0;
+  // タイムラインがない場合は何もしない
+  // タイムラインがタイムラインの長さ以上なら０に初期化
+  if (this.scene.timelineIndex === undefined) {
+    this.scene.timelineIndex = 0;
+  }if(this.scene.timelineIndex >= this.scene.timeline.length){
+    this.scene.timelineIndex = 0;
+  }
+
+  
+
   if (!this.scene.timeline) {
     return;
   }
@@ -135,6 +98,7 @@ next() {
       this.setBackground(timelineEvent.x, timelineEvent.y, timelineEvent.key);
       this.next();  // すぐに次のタイムラインを実行する
       break;
+  
 
     case 'addForeground':  // 前景追加イベント
       this.addForeground(timelineEvent.x, timelineEvent.y, timelineEvent.key);
@@ -149,13 +113,16 @@ next() {
     case 'timelineTransition':  // タイムライン遷移イベント
       // シーンをリスタートし、指定のタイムラインを実行する
       // restart()の引数がシーンのinit()の引数に渡される
+      this.scene.timelineIndex = 0;
       this.scene.scene.restart({ timelineID: timelineEvent.timelineID });
       break;
 
     case 'sceneTransition':  // シーン遷移イベント
       // 指定のシーンに遷移する
       // start()の第2引数がシーンのinit()の引数に渡される
+      
       this.scene.scene.start(timelineEvent.key, timelineEvent.data);
+
       break;
 
     case 'choice':  // 選択肢イベント
@@ -163,6 +130,8 @@ next() {
       this.setChoiceButtons(timelineEvent.choices);
       
       break;
+    
+
 
     default:
       break;
