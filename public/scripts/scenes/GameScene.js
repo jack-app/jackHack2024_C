@@ -4,7 +4,7 @@ import NumeronPopup from "../components/NumeronPopup.js";
 import { game_count, SetGameCount} from "../main.js";
 var timer_ID;
 var timer_text = "time: 60";
-var timer = 16;
+var timer = 60;
 
 export class GameScene extends Phaser.Scene {
     constructor() {
@@ -18,7 +18,7 @@ export class GameScene extends Phaser.Scene {
         this.canvasHeight = this.sys.canvas.height;
         timer_ID;
         timer_text = "time: 60";
-        timer = 16;
+        timer = 60;
     }
 
     preload() {
@@ -39,6 +39,13 @@ export class GameScene extends Phaser.Scene {
         this.popup_list = [];
         timer_text = this.add.text(16, 16, 'time: 60', { fontSize: '32px', fill: '#FFF' });
         timer_ID = setInterval(this.UpdateTime.bind(this), 1000);
+        if(game_count <= 2){
+            this.CreatePopup(0,0,1);
+        }
+        else{
+            this.CreatePopup(0,0,1);
+            this.CreatePopup(0,0,1);
+        }
     }
 
     update() {
@@ -58,31 +65,31 @@ export class GameScene extends Phaser.Scene {
                 this.ToNextScene();
             }
         }
-        else if(timer ==10){
+        if(game_count==1 && timer%10==0) this.CreatePopup(0.33,1,1);
+        if(game_count==2 && timer%7==0) this.CreatePopup(0.33,1,1);
+        if(game_count==3 && timer%5==0) this.CreatePopup(0.33,1,1);
+        if(timer ==10){
             timer_text.setColor('#FF3F3F');
             timer_text.setFontSize('45px');
             this.audio.play();
         }
-        else if(timer ==5){
+        if(timer ==5){
             this.audio2.play();
-        }
-        else if(timer%5==0){
-            this.CreatePopup();
         }
     }
 
-    CreatePopup() {
+    CreatePopup(p1,p2,p3) {
         var random = Math.random();
         var x = 150+Math.floor(Math.random()*(this.canvasWidth-150));
         var y = 100+Math.floor(Math.random()*(this.canvasHeight-175));
         var popup;
-        if (random<0.33){
+        if (random<p1){
             popup=new PushButtonPopup(this,x,y);
             popup.setPosition(x,y);
             this.add.existing(popup);
             this.popup_list.push(popup);
         }
-        else if (random<0.66){
+        else if (random<p1+p2){
             popup=new CommandPopup(this,x,y);
             popup.setPosition(x,y);
             this.add.existing(popup);
