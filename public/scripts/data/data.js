@@ -1,9 +1,9 @@
-
+// Timeline data
 export const timelineData = {
   start: [
     {type: 'dialog', text: '・・・・・・ ▼'},
     {type: 'dialog', text: 'う、うーん・・・ ▼'},
-    {type: 'setBackground', x: 400, y: 300, key: 'street'},
+    {type: 'setBackground', x: 400, y: 300, key: 'CIA'},
     {type: 'dialog', text: 'ここは・・・？ ▼'},
     {type: 'addForeground', x: 400, y: 300, key: 'robot'},
     {type: 'dialog', text: '目が覚めましたか ▼', actorName: '???'},
@@ -15,7 +15,7 @@ export const timelineData = {
     {type: 'timelineTransition', timelineID: 'choice01'}
   ],
   choice01: [
-    {type: 'setBackground', x: 400, y: 300, key: 'street'},
+    {type: 'setBackground', x: 400, y: 300, key: 'CIA'},
     {type: 'addForeground', x: 400, y: 300, key: 'robot'},
     {type: 'dialog', text: '一緒に逃げましょう ▼', actorName: 'ACT-42'},
     {type: 'choice', choices: [
@@ -25,7 +25,7 @@ export const timelineData = {
     ]}
   ],
   choice01_a01: [
-    {type: 'setBackground', x: 400, y: 300, key: 'street'},
+    {type: 'setBackground', x: 400, y: 300, key: 'CIA'},
     {type: 'addForeground', x: 400, y: 300, key: 'robot'},
     {type: 'dialog', text: '事情はつかめないけどとりあえず従っておこう ▼'},
     {type: 'dialog', text: 'よろしい。ではこちらへ来てください ▼', actorName: 'ACT-42'},
@@ -34,7 +34,7 @@ export const timelineData = {
     {type: 'sceneTransition', key: 'ending'}
   ],
   choice01_a02: [
-    {type: 'setBackground', x: 400, y: 300, key: 'street'},
+    {type: 'setBackground', x: 400, y: 300, key: 'CIA'},
     {type: 'addForeground', x: 400, y: 300, key: 'robot'},
     {type: 'dialog', text: '・・・困りましたね ▼', actorName: 'ACT-42'},
     {type: 'dialog', text: '今は事情を話している暇がないんです ▼', actorName: 'ACT-42'},
@@ -43,7 +43,7 @@ export const timelineData = {
     {type: 'timelineTransition', timelineID: 'choice01'}
   ],
   choice01_a03: [
-    {type: 'setBackground', x: 400, y: 300, key: 'street'},
+    {type: 'setBackground', x: 400, y: 300, key: 'CIA'},
     {type: 'addForeground', x: 400, y: 300, key: 'robot'},
     {type: 'dialog', text: '・・・・・・ ▼', actorName: 'ACT-42'},
     {type: 'dialog', text: 'わかりました。それでは私はこれで ▼', actorName: 'ACT-42'},
