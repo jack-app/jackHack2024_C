@@ -4,8 +4,10 @@ import { EndingScene } from "./scenes/EndingScene.js";
 import { GameScene } from "./scenes/GameScene.js";
 
 
-//ゲームに関する情報
-
+export let game_count = 1; //何回目の勝負か
+export const SetGameCount = (count)=>{
+    game_count = count;
+};
 
 //ゲームに関する設定
 var config = {

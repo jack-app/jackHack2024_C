@@ -27,7 +27,7 @@ export default class PushButtonPopup extends Phaser.GameObjects.Container {
         this.limit_txt.setText(Math.floor(this.limit/10)+'.'+this.limit%10);
         if (this.limit<=0) {
             clearInterval(this.timer_ID);
-            this.scene.scene.start("StartScene");
+            this.scene.ToPreviousScene();
         }
     }
     #Push() {
@@ -39,7 +39,7 @@ export default class PushButtonPopup extends Phaser.GameObjects.Container {
         else{
             console.log("incorrect");
             clearInterval(this.timer_ID);
-            this.scene.scene.start("StartScene");
+            this.scene.ToPreviousScene();
         }
     }
 

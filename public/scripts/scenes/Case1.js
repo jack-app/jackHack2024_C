@@ -28,6 +28,7 @@ export class MainScene extends Phaser.Scene {
 
     }
     preload() {
+        console.log('preload');
         this.load.image('CIA','images/CIA.jpg');
         this.load.image('case1_1', 'images/case1_1.png');
         this.load.image('case1_2', 'images/case1_2.png');
@@ -35,6 +36,7 @@ export class MainScene extends Phaser.Scene {
         this.load.image('case1_4', 'images/case1_4.png');
         this.load.image('case1_5', 'images/case1_5.png');
         this.load.image('case1_6', 'images/case1_6.png');
+        this.load.image('case1_7', 'images/case1_7.jpg');
         this.load.image('case2_1', 'images/case2_1.png');
         this.load.image('case2_2', 'images/case2_2.png');
         this.load.image('case2_3', 'images/case2_3.png');
@@ -46,6 +48,8 @@ export class MainScene extends Phaser.Scene {
         this.load.image('case3_4', 'images/case3_4.jpg');
         this.load.image('case3_5', 'images/case3_5.png');
         this.load.image('case3_6', 'images/case3_6.jpeg');
+        this.load.image('case3_7', 'images/case3_7.png');
+        this.load.image('case3_8', 'images/case3_8.jpeg');
         this.load.video('fire', 'video/fire.mp4');
     };
   
