@@ -54,13 +54,13 @@ export class GameScene extends Phaser.Scene {
         var x = 150+Math.floor(Math.random()*(this.canvasWidth-150));
         var y = 100+Math.floor(Math.random()*(this.canvasHeight-175));
         var popup;
-        if (random==0){
+        if (random<0.33){
             popup=new PushButtonPopup(this,x,y);
             popup.setPosition(x,y);
             this.add.existing(popup);
             this.popup_list.push(popup);
         }
-        else if (random==1){
+        else if (random<0.66){
             popup=new CommandPopup(this,x,y);
             popup.setPosition(x,y);
             this.add.existing(popup);
