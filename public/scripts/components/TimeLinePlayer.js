@@ -113,6 +113,7 @@ next() {
   switch (timelineEvent.type) {
     case 'orakuru': 
       this.dialogBox.setVisible(false);
+      break;
     case 'dialog':  // ダイアログイベント
       if (timelineEvent.actorName) {
         // actorNameが設定されていたら名前を表示
@@ -163,6 +164,7 @@ next() {
       break;
     case 'playGame':
       this.scene.scene.start('GameScene');
+      break;
     
     case 'fire_jyoji':  // 動画再生イベント
       this.playVideo(timelineEvent.x, timelineEvent.y, timelineEvent.key,3);
@@ -179,11 +181,13 @@ next() {
       // this.dialogBox.setVisible(false);
       this.playVideo(timelineEvent.x, timelineEvent.y, timelineEvent.key,'tbc');
       this.next();  // すぐに次のタイムラインを実行する
+      break;
   
     case 'to_be_continued':  // 続くイベント
       this.playVideo(640, 360, 'tbc',6);
       this.playAudio('to_be_continued',20);
       // this.next();  // すぐに次のタイムラインを実行する
+      break;
   
 
     
