@@ -17,8 +17,8 @@ export const timelineData = {
     {type: 'dialog', text:'ぽちっ'},
     {type: 'addForeground', x: 640, y: 360, key: 'case1_5'},
     {type: 'dialog', text:'「しまったぁっ！詐欺サイトに引っかかってしまったッ！」', actorName: 'ナキ'},
-  
-
+    {type: 'addForeground', x: 640, y: 360, key: 'case1_orakuru'},
+    {type: 'orakuru'},
     {type: 'playGame'},
   ],
   case1_win: [
@@ -43,13 +43,15 @@ export const timelineData = {
     {type: 'dialog', text: '「あのとき注文した商品がそろそろ届くころだ。」 ', actorName: 'ナキ'},
     {type: 'dialog', text: '「発送連絡はまだかな～？」', actorName: 'ナキ'},
     {type: 'dialog', text: 'ふとした気持ちでメールを開いた。すると、こんなメールが受信BOXに届いていた。'},
-    {type:'addForeground', x: 640, y: 360, key: 'case2_2'},
+    {type:'addForeground', x: 640, y: 360, key: 'case2_otani'},
     {type: 'dialog', text: '日本のファンのみんな。私は大谷翔平です。私は日本の小学校にバットを送ろうと考えています😁。私は水原一平にお金を取られてお金がないので🥺私に募金して下さい。私に以下のリンクからお金を送ってくて下さい🥺URL：http://www.koreosuruyatugatidekikikanmottahougaii.bkm', actorName: '大谷翔平？'},
     {type: 'dialog', text: '「大谷さんがお金に困ってる？！', actorName: 'ナキ'},
     {type: 'dialog', text: '「これは絶対に助けないと！」', actorName: 'ナキ'},
     {type: 'dialog', text: '「助けなければいけないな！！」', actorName: 'ナキ'},
     {type:'addForeground', x: 640, y: 360, key: 'case2_3'},
     {type: 'dialog', text: '「しまったァァッ！詐欺サイトに引っかかってしまったッッ！！！」', actorName: 'ナキ'},
+    {type: 'addForeground', x: 640, y: 360, key: 'case2_orakuru'},
+    {type: 'orakuru'},
     {type: 'playGame'},
   ],
   case2_win:[
@@ -97,10 +99,14 @@ export const timelineData = {
 
     {type: 'dialog', text: '「さあ最後の決戦だ、お前に危機感を植え付けてやろう。一生忘れられないようになっ」', actorName: 'ジョージ'},
     {type:'dialog', text: '「最後の決戦だ！数々の危機を乗り越えた力ここで見せつけてやる」', actorName: 'ナキ'},
-    // 最後のイベント
+
+    {type: 'addForeground', x: 640, y: 360, key: 'case3_orakuru'},
+    {type: 'orakuru'},
     {type: 'playGame'},
   ],
   case3_win:[
+    {type: 'addForeground', x: 640, y: 360, key: 'case3_win'},
+    {type: 'orakuru'},
     {type:'addForeground', x: 640, y: 360, key: 'case3_6'},
     {type: 'dialog', text: '「危機感を持った方が良かったのはお前の方だったようだなァッ！！！ジョージーーーッッッ！！！」', actorName: 'ナキ'},
     // ジョージ爆発
@@ -127,6 +133,8 @@ export const timelineData = {
 
   ],
   case3_lose:[
+    {type: 'addForeground', x: 640, y: 360, key: 'case3_lose'},
+    {type: 'orakuru'},
     {type: 'setBackground', x: 640, y: 360, key: 'case3_5'},
     {type:'dialog', text:'「これ結構大げさって思われる可能性が高いんだけどスポーツ経験がない男、今まであんまり運動経験がない男、部活に入った経験がない男、俺ガチで危機感持った方がいいと思うよ、うんガチで危機感持った方が良いよ、うんガチで危機感持った方が良い、俺は俺はスポーツ向いてないから運動神経無いから家に引きこもってる方が楽しいから、俺はゲームが好きだから俺は遊戯王プレイヤーだから、やばいって何がヤバイかっていうと男として成熟しないんだよね。その人生の中で何かしらの競争をしてないと男として成熟するためのパーツにかける。最後に競争したのいつ、ほかの男と戦ったの、いつ監督に理不尽なこと言われたの、いつお前つかえないって言われてベンチされたいないでしょ。」'},
     {type: 'timelineTransition', timelineID: 'case3'},
