@@ -3,8 +3,8 @@ import CommandPopup from "../components/CommandPopup.js";
 import NumeronPopup from "../components/NumeronPopup.js";
 import { game_count, SetGameCount} from "../main.js";
 var timer_ID;
-var timer_text = "time: 60";
-var timer = 60;
+var timer_text;
+var timer;
 
 export class GameScene extends Phaser.Scene {
     constructor() {
@@ -17,8 +17,8 @@ export class GameScene extends Phaser.Scene {
         this.canvasWidth = this.sys.canvas.width;
         this.canvasHeight = this.sys.canvas.height;
         timer_ID;
-        timer_text = "time: 60";
-        timer = 60;
+        timer_text = "time: 20";
+        timer = 20;
     }
 
     preload() {
@@ -37,7 +37,7 @@ export class GameScene extends Phaser.Scene {
         // If the LoaderPlugin started after preload(), then this method is called only after loading is complete.
         const background = this.add.image(this.canvasWidth/2,this.canvasHeight/2, "background")
         this.popup_list = [];
-        timer_text = this.add.text(16, 16, 'time: 60', { fontSize: '32px', fill: '#FFF' });
+        timer_text = this.add.text(16, 16, 'time: 20', { fontSize: '32px', fill: '#FFF' });
         timer_ID = setInterval(this.UpdateTime.bind(this), 1000);
         if(game_count <= 2){
             this.CreatePopup(0,0,1);
@@ -107,9 +107,7 @@ export class GameScene extends Phaser.Scene {
         this.audio.pause();
         this.audio2.pause();
         SetGameCount(game_count+1);
-        if(game_count == 2) this.scene.start('Case1', {timelineID:'case1_win'});
-        if(game_count == 3) this.scene.start('Case1', {timelineID:'case2_win'});
-        if(game_count == 4) this.scene.start('Case1', {timelineID:'case3_win'});
+        this.scene.start('Case1', {timelineID:'case3_win'});
     }
     ToPreviousScene() {
         clearInterval(timer_ID);

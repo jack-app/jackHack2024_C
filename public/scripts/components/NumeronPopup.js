@@ -36,7 +36,7 @@ export default class NumeronPopup extends Phaser.GameObjects.Container {
         this.destroy();
     }
     #initAns() {
-        this.answer = [];
+        this.answer = [1,3,5];
         var arr = [0,1,2,3,4,5,6,7,8,9];
         for (var i=0;i<this.n;i++) {
             var rand = Math.floor(Math.random()*(10-i));

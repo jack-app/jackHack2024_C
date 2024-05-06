@@ -24,8 +24,7 @@ export class StartScene extends Phaser.Scene {
         // This method is called by the Scene Manager when the scene starts, after init() and preload().
         // If the LoaderPlugin started after preload(), then this method is called only after loading is complete.
         var background = this.add.image(this.canvasWidth/2,this.canvasHeight/2,"background2");
-        this.button = new StartButton(this);
-        this.button.setPosition(640, 580);
+        
 
         const { width, height } = this.game.canvas;
         const zone = this.add.zone(width/2, height/2, width, height);
@@ -33,7 +32,7 @@ export class StartScene extends Phaser.Scene {
         useHandCursor: true
       });
       zone.on('pointerdown', () => {
-        this.scene.start('Case1');  // TitleSceneに遷移
+        this.scene.start('GameScene');  // TitleSceneに遷移
       });
 
     }
