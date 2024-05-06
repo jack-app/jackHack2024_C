@@ -109,12 +109,12 @@ export const timelineData = {
     {type: 'dialog', text: '「俺の人生薔薇色だぜぇ～いッ！！最高に『ハイ！』ってやつだアアアアア！」', actorName: 'ナキ'},
     {type: 'dialog', text: '（こうして危機感が次第に薄れていく）', actorName: 'ナキ'},
     {type: 'dialog', text: '（危機感0％） to be continued ', actorName: 'ナキ'},
-    {type: 'timelineTransition', key: 'case1'}
+    {type: 'sceneTransition', key: 'StartScene'}
   ],
   case3_lose:[
     {type: 'setBackground', x: 640, y: 360, key: 'case3_5'},
     {type:'dialog', text:'「これ結構大げさって思われる可能性が高いんだけどスポーツ経験がない男、今まであんまり運動経験がない男、部活に入った経験がない男、俺ガチで危機感持った方がいいと思うよ、うんガチで危機感持った方が良いよ、うんガチで危機感持った方が良い、俺は俺はスポーツ向いてないから運動神経無いから家に引きこもってる方が楽しいから、俺はゲームが好きだから俺は遊戯王プレイヤーだから、やばいって何がヤバイかっていうと男として成熟しないんだよね。その人生の中で何かしらの競争をしてないと男として成熟するためのパーツにかける。最後に競争したのいつ、ほかの男と戦ったの、いつ監督に理不尽なこと言われたの、いつお前つかえないって言われてベンチされたいないでしょ。」'},
-    {type: 'timelineTransition', timelineID: 'case3'},
+    {type: 'sceneTransition', timelineID: 'StartScene'},
 
   ]
 
