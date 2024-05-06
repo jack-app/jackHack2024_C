@@ -16,7 +16,7 @@ export const timelineData = {
     {type: 'dialog', text:'こうしてスポーツ用品の海外ショッピングサイトを見に行った。'},
     {type: 'dialog', text:'ぽちっ'},
     {type: 'addForeground', x: 640, y: 360, key: 'case1_5'},
-    {type: 'dialog', text:'「しまったぁっ！詐欺サイトに引っかかってしまったッ！」', actorName: 'ナキ'},
+    {type: 'dialog', text:'「しまったァッ！詐欺サイトに引っかかってしまったッ！」', actorName: 'ナキ'},
   
 
     {type: 'playGame'},
@@ -25,7 +25,7 @@ export const timelineData = {
     {type: 'setBackground', x: 640, y: 360, key: 'case1_6'},
     {type: 'dialog', text: '「もしかして俺って結構すごい？でも海外ショッピングサイトにはもう行かなーい！」', actorName: 'ナキ'},
     {type:'dialog', text: '（危機感10％）', actorName: 'ナキ'},
-    {type:'dialog', text: 'いい子の皆さんはこういうサイトには気をつけましょう…'},
+    {type:'dialog', text: 'よい子の皆さんはこういうサイトには気をつけましょう…'},
     {type: 'timelineTransition', timelineID: 'case2'},
   ],
   case1_lose:[
@@ -46,10 +46,10 @@ export const timelineData = {
     {type:'addForeground', x: 640, y: 360, key: 'case2_2'},
     {type: 'dialog', text: '日本のファンのみんな。私は大谷翔平です。私は日本の小学校にバットを送ろうと考えています😁。私は水原一平にお金を取られてお金がないので🥺私に募金して下さい。私に以下のリンクからお金を送ってくて下さい🥺URL：http://www.koreosuruyatugatidekikikanmottahougaii.bkm', actorName: '大谷翔平？'},
     {type: 'dialog', text: '「大谷さんがお金に困ってる？！', actorName: 'ナキ'},
-    {type: 'dialog', text: '「これは絶対に助けないと！」', actorName: 'ナキ'},
-    {type: 'dialog', text: '「助けなければいけないな！！」', actorName: 'ナキ'},
+    {type: 'dialog', text: '「これは絶対に助けないとッ！」', actorName: 'ナキ'},
+    {type: 'dialog', text: '「助けなければいけないなッ！！」', actorName: 'ナキ'},
     {type:'addForeground', x: 640, y: 360, key: 'case2_3'},
-    {type: 'dialog', text: '「しまったァァッ！詐欺サイトに引っかかってしまったッッ！！！」', actorName: 'ナキ'},
+    {type: 'dialog', text: '「しまったァァッ！！詐欺サイトに引っかかってしまったッッ！！」', actorName: 'ナキ'},
     {type: 'playGame'},
   ],
   case2_win:[
@@ -65,8 +65,8 @@ export const timelineData = {
     {type: 'setBackground', x: 640, y: 360, key: 'case2_5'},
     {type: 'dialog', text:'ついには、膨大な借金を返しきれなくなり、地下での強制労働をさせられるはめになってしまった。'},
     {type:'dialog', text: '地下では、同じ詐欺の被害に遭った人たちが自分と同様に働かされていた。'},
-    {type:'dialog', text:'もうこうなってしまっては、ジョージの言っていたモテる、モテないとかいうレベルの話ではない。' },
-    {type:'dialog', text:'「くっそーーーーーー！！！」（大文字で）', actorName: 'ナキ'},
+    {type:'dialog', text:'もうこうなってしまっては、ジョージの言っていたモテる、モテないとかいうレベルの話ではないッ！' },
+    {type:'dialog', text:'「くっそーーーーーー！！！」', actorName: 'ナキ'},
     {type:'dialog', text:' to be continued….' },
     {type: 'timelineTransition', timelineID: 'case2'},
   ],
@@ -79,24 +79,24 @@ export const timelineData = {
     {type: 'dialog', text: '「CIAからの協力要請？少し怪しい気がするけど、CIAからなら大丈夫でしょ。これは受けるしかない！！！」', actorName: 'ナキ'},
     {type: 'dialog', text: 'ぽちっ'},
     {type:'addForeground', x: 640, y: 360, key: 'case3_3'},
-    {type: 'dialog', text: '「しまったァァッ！詐欺サイトに引っかかってしまったッッ！！！」', actorName: 'ナキ'},
+    {type: 'dialog', text: '「しまったァァァッ！！！詐欺サイトに引っかかってしまったッッッ！！！」', actorName: 'ナキ'},
 
     {type: 'playAudio', key: 'erectro', time: 10},
     {type : 'addForeground', x: 640, y: 360, key: 'case3_4'},
     {type: 'dialog', text: '「危機感を持てと言っただろう？」', actorName: '???'},
-    {type: 'case3_3', text: '「だれだお前」', actorName: 'ナキ'},
-    {type: 'case3_4', text: '「危機感を持てと言っただろ!!!!!」', actorName: '???'},
-    {type: 'dialog', text: '「そ.その声は!!!!!」', actorName: 'ナキ'},
+    {type: 'case3_3', text: '「だれだお前ッ！」', actorName: 'ナキ'},
+    {type: 'case3_4', text: '「危機感を持てと言っただろう!!!!!」', actorName: '???'},
+    {type: 'dialog', text: '「そ.その声はッッ!!!!!」', actorName: 'ナキ'},
     {type:'addForeground', x: 640, y: 360, key: 'case3_5'},
-    {type: 'dialog', text: '「危機感二キ・ジョージ！！！」', actorName: 'ナキ'},
+    {type: 'dialog', text: '「危機感二キ・ジョージッ！！！」', actorName: 'ナキ'},
     // ネタばらし　ジョージが実はすべての黒幕だったということをわからせる会話
     {type:'dialog', text: '「君が今までの詐欺サイトに引っ掛かるのを楽しく拝見していたよ」', actorName: 'ジョージ'},
     {type:'dialog', text: '「なんでだよ！！！！」', actorName: 'ナキ'},
     {type:'dialog', text: '「君の危機感は普通では十分なようだが私には勝てるかな？」', actorName: 'ジョージ'},
-    {type:'dialog', text: '「ふん上等だ！お前がこれから先、危機感を忘れられないように退治してやる」', actorName: 'ナキ'},
+    {type:'dialog', text: '「フンッ上等だ！お前がこれから先、危機感を忘れられないように退治してやるゥッ！」', actorName: 'ナキ'},
 
-    {type: 'dialog', text: '「さあ最後の決戦だ、お前に危機感を植え付けてやろう。一生忘れられないようになっ」', actorName: 'ジョージ'},
-    {type:'dialog', text: '「最後の決戦だ！数々の危機を乗り越えた力ここで見せつけてやる」', actorName: 'ナキ'},
+    {type: 'dialog', text: '「さあ最後の決戦だ、お前に危機感を植え付けてやろう。一生忘れられないようになァッ！！！」', actorName: 'ジョージ'},
+    {type:'dialog', text: '「最後の決戦だ！数々の危機を乗り越えた力ここで見せつけてやるッッッ！！！」', actorName: 'ナキ'},
     // 最後のイベント
     {type: 'playGame'},
   ],
@@ -111,10 +111,10 @@ export const timelineData = {
     {type: 'dialog', text: 'それからというもの樹木ナキは国民栄誉賞に選ばれ、モテモテになった。'},
     {type:'addForeground', x: 640, y: 360, key: 'case3_8'},
     {type: 'dialog', text: '「俺の人生薔薇色だぜぇ～いッ！！最高に『ハイ！』ってやつだアアアアア！」', actorName: 'ナキ'},
-    {type: 'dialog', text: '（こうして危機感が次第に薄れていく）', actorName: 'ナキ'},
+    {type: 'dialog', text: '（こうして危機感が次第に薄れていく…）', actorName: 'ナキ'},
     // ここからto_be_continued
 
-
+    {type: 'dialog', text: 'ナキの危機感が薄れていく中で、あの男がまた復活しようとしていた…'},
     {type:'sceneTransition', key:'StartScene'},
 
   ],
