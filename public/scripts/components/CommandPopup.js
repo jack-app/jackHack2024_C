@@ -10,7 +10,7 @@ export default class CommandPopup extends Phaser.GameObjects.Container {
         this.exp_txt = scene.add.text(0, -50, "type: "+this.keyphrase, { fontSize: '16px', fill: '#FFF' });
         this.exp_txt.setOrigin(0.5);
         this.add(this.exp_txt);
-        this.inputbackgrpund = scene.add.rectangle(0, 0, 200, 20, 0x000000);
+        this.inputbackgrpund = scene.add.rectangle(0, -10, 200, 20, 0x000000);
         this.add(this.inputbackgrpund);
         this.inputText = scene.add.rexInputText(0, 0, 200, 50);
         this.add(this.inputText);

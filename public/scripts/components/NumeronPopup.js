@@ -7,7 +7,7 @@ export default class NumeronPopup extends Phaser.GameObjects.Container {
         this.#initAns();
         this.graphics = scene.add.rectangle(0, 0, 300, 150, 0xFFD800);
         this.add(this.graphics);
-        this.inputbackgrpund = scene.add.rectangle(0, 20, 200, 20, 0x000000);
+        this.inputbackgrpund = scene.add.rectangle(0, 10, 200, 20, 0x000000);
         this.add(this.inputbackgrpund);
         this.title = scene.add.text(0, -50,"Numeron", { fontSize: '16px', fill: '#000000' });
         this.title.setOrigin(0.5);
