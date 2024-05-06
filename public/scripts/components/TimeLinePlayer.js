@@ -73,6 +73,19 @@ playVideo(x, y, texture) {
   });
 }
 
+// audioを再生する  
+playAudio(texture,time) {
+  // audioのオブジェクトを作成
+  var audio = this.scene.sound.add(texture);
+  // audioを再生
+  audio.play();
+  // time秒待つ
+  this.scene.time.delayedCall(time*1000, () => {
+    // audioを停止
+    audio.stop();
+  });
+}
+
 
 
 // 次のタイムラインを実行
@@ -148,8 +161,15 @@ next() {
     case 'playGame':
       this.scene.scene.start('GameScene');
     
-    case 'playVideo':  // 動画再生イベント
+    case 'fire_jyoji':  // 動画再生イベント
       this.playVideo(timelineEvent.x, timelineEvent.y, timelineEvent.key);
+      this.playVideo(timelineEvent.key);
+      this.playAudio('fire_bgm',3);
+      this.next();  // すぐに次のタイムラインを実行する
+      break;
+
+    case 'playAudio':  // 音声再生イベント
+      this.playAudio(timelineEvent.key);
       this.next();  // すぐに次のタイムラインを実行する
       break;
   
