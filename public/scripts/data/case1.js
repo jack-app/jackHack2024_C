@@ -17,6 +17,8 @@ export const timelineData = {
     {type: 'dialog', text:'ぽちっ'},
     {type: 'addForeground', x: 640, y: 360, key: 'case1_5'},
     {type: 'dialog', text:'「しまったぁっ！詐欺サイトに引っかかってしまったッ！」', actorName: 'ナキ'},
+    {type: 'addForeground', x: 640, y: 360, key: 'case1_orakuru'},
+    {type: 'orakuru'},
     {type: 'playGame'},
   ],
   case1_win: [
@@ -48,6 +50,8 @@ export const timelineData = {
     {type: 'dialog', text: '「助けなければいけないな！！」', actorName: 'ナキ'},
     {type:'addForeground', x: 640, y: 360, key: 'case2_3'},
     {type: 'dialog', text: '「しまったァァッ！詐欺サイトに引っかかってしまったッッ！！！」', actorName: 'ナキ'},
+    {type: 'addForeground', x: 640, y: 360, key: 'case2_orakuru'},
+    {type: 'orakuru'},
     {type: 'playGame'},
   ],
   case2_win:[
@@ -93,8 +97,8 @@ export const timelineData = {
 
     {type: 'dialog', text: '「さあ最後の決戦だ、お前に危機感を植え付けてやろう。一生忘れられないようにな」', actorName: 'ジョージ'},
     {type:'dialog', text: '「最後の決戦だ！数々の危機を乗り越えた力ここで見せつけてやる」', actorName: 'ナキ'},
-    // 最後のイベント
-    {type: 'timelineTransition', timelineID: 'case3_win'},
+    {type: 'addForeground', x: 640, y: 360, key: 'case3_orakuru'},
+    {type: 'orakuru'},
     {type: 'playGame'},
   ],
   case3_win:[
