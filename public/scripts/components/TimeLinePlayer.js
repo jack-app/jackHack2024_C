@@ -96,9 +96,10 @@ next() {
   // タイムラインのイベントを取得してから、timelineIndexをインクリメント
   const timelineEvent = this.scene.timeline[this.scene.timelineIndex++];
 
+  this.dialogBox.setVisible(true);
   switch (timelineEvent.type) {
     case 'orakuru': 
-      this.dialogBox.destroy();
+      this.dialogBox.setVisible(false);
     case 'dialog':  // ダイアログイベント
       if (timelineEvent.actorName) {
         // actorNameが設定されていたら名前を表示

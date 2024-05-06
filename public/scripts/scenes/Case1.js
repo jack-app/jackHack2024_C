@@ -54,6 +54,8 @@ export class MainScene extends Phaser.Scene {
         this.load.image('case3_7', 'images/case3_7.png');
         this.load.image('case3_8', 'images/case3_8.jpeg');
         this.load.image('case3_orakuru', 'images/オラクル３.png');
+        this.load.image('case3_win', 'images/win.png');
+        this.load.image('case3_lose', 'images/lose.png');
         this.load.video('fire', 'video/fire.mp4');
     };
   
