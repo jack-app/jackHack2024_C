@@ -13,7 +13,7 @@ export class MainScene extends Phaser.Scene {
       // this.scene.restart()の第1引数もしくは
       // this.scene.start()の第2引数に指定されたオブジェクトがdataに渡される
       // デバックはこのデフォルト値を変える
-      const timelineID = data.timelineID || 'case3_win';
+      const timelineID = data.timelineID || 'case1';
   
       if (!(timelineID in timelineData)) {
         console.error(`[ERROR] タイムラインID[${timelineID}]は登録されていません`);

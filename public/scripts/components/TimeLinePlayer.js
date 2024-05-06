@@ -182,7 +182,7 @@ next() {
   
     case 'to_be_continued':  // 続くイベント
       this.playVideo(640, 360, 'tbc',6);
-      this.playAudio('to_be_continued',10);
+      this.playAudio('to_be_continued',20);
       // this.next();  // すぐに次のタイムラインを実行する
   
 
