@@ -5,7 +5,7 @@ export default class CommandPopup extends Phaser.GameObjects.Container {
         this.setSize(750, 240);
         scene.add.existing(this);
         this.on("pointerdown",() => {
-          scene.scene.start('Case1',{timelineID:"case1"}); 
+          scene.scene.start('Case1',{timelineID:"case3"}); 
         });
         this.setInteractive();
     }

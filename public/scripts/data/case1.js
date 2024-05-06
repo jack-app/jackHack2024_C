@@ -29,8 +29,8 @@ export const timelineData = {
     {type: 'timelineTransition', timelineID: 'case2'},
   ],
   case1_lose:[
-    {type: 'setBackground', x: 640, y: 360, key: 'case1_7'},
     {type: 'dialog', text: '樹木ナキはこうして個人情報とお金が抜き取られてしまった。'},
+    {type: 'setBackground', x: 640, y: 360, key: 'case1_7'},
     {type: 'dialog', text:'架空の請求が毎日来て、借金の返済に明け暮れる。' },
     {type: 'dialog', text:'「あの人簡単な詐欺に引っかかったらしいよ！ダッサーい！！」',key: '気になるあの子'},
     {type:'dialog', text: '気になるあの子にも嫌われてしまい…こうしてモテとは程遠くなってしまった…'},
