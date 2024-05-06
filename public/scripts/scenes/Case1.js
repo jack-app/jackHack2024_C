@@ -49,7 +49,9 @@ export class MainScene extends Phaser.Scene {
         this.load.image('case3_6', 'images/case3_6.jpeg');
         this.load.image('case3_7', 'images/case3_7.png');
         this.load.image('case3_8', 'images/case3_8.jpeg');
+        this.load.image('case3_9', 'images/case3_9.png');
         this.load.video('fire', 'video/fire.mp4');
+        this.load.video('tbc','video/tbc.mp4')
         this.load.audio('to_be_continued', 'audio/to_be_continued.mp3');
         this.load.audio('erectro', 'audio/erectro.mp3');
         this.load.audio('fire_bgm', 'audio/fire_bgm.mp3');

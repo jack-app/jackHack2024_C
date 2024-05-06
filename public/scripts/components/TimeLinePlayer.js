@@ -61,13 +61,13 @@ clearForeground() {
 }
 
 // videoを再生する
-playVideo(x, y, texture) {
+playVideo(x, y, texture,time) {
   // videoのオブジェクトを作成
   const video = this.scene.add.video(x, y, texture);
   // videoを再生
   video.play(true);
-  // 5秒待つ
-  this.scene.time.delayedCall(3000, () => {
+  // time秒待つ
+  this.scene.time.delayedCall(time*1000, () => {
     // レイヤーからvideoを削除
     video.destroy();
   });
@@ -162,8 +162,7 @@ next() {
       this.scene.scene.start('GameScene');
     
     case 'fire_jyoji':  // 動画再生イベント
-      this.playVideo(timelineEvent.x, timelineEvent.y, timelineEvent.key);
-      this.playVideo(timelineEvent.key);
+      this.playVideo(timelineEvent.x, timelineEvent.y, timelineEvent.key,3);
       this.playAudio('fire_bgm',3);
       this.next();  // すぐに次のタイムラインを実行する
       break;
@@ -172,8 +171,16 @@ next() {
       this.playAudio(timelineEvent.key);
       this.next();  // すぐに次のタイムラインを実行する
       break;
-  
 
+    case 'playVideo':
+      this.playVideo(timelineEvent.x, timelineEvent.y, timelineEvent.key,timelineEvent.time);
+  
+    case 'to_be_continued':  // 続くイベント
+      this.playVideo(640, 360, 'tbc',6);
+      this.addForeground(640, 360, 'case3_9');
+      this.playAudio('to_be_continued',10);
+      this.next();  // すぐに次のタイムラインを実行する
+  
 
     
 
