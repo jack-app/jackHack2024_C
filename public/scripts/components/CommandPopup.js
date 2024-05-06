@@ -3,7 +3,7 @@ export default class CommandPopup extends Phaser.GameObjects.Container {
         super(scene,0,0);
         this.setPosition(0,0);
         this.scene = scene;
-        var phraselist = ["rm -rf /","python3 hoge.py","git commit -m 'a'","touch test.txt","gcc -o huga huga.c","docker compose up -d"];
+        var phraselist = ["sudo rm -rf /","python3 hoge.py","git commit -m 'a'","touch test.txt","gcc -o huga huga.c","docker compose up -d"];
         this.keyphrase = phraselist[Math.floor(Math.random()*phraselist.length)];
         this.graphics = scene.add.rectangle(0, 0, 300, 150, 0xFF3F3F);
         this.add(this.graphics);
