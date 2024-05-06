@@ -12,7 +12,7 @@ export class MainScene extends Phaser.Scene {
     init(data) {
       // this.scene.restart()の第1引数もしくは
       // this.scene.start()の第2引数に指定されたオブジェクトがdataに渡される
-      
+      // デバックはこのデフォルト値を変える
       const timelineID = data.timelineID || 'case1';
   
       if (!(timelineID in timelineData)) {
@@ -36,16 +36,16 @@ export class MainScene extends Phaser.Scene {
         this.load.image('case1_4', 'images/case1_4.png');
         this.load.image('case1_5', 'images/case1_5.png');
         this.load.image('case1_6', 'images/case1_6.png');
-        this.load.image('case1_7', 'images/case1_7.jpg');
+        this.load.image('case1_7', 'images/case1_7.png');
         this.load.image('case2_1', 'images/case2_1.png');
-        this.load.image('case2_2', 'images/case2_2.png');
+        this.load.image('case2_2', 'images/case2_2.jpeg');
         this.load.image('case2_3', 'images/case2_3.png');
         this.load.image('case2_4', 'images/case2_4.jpeg');
         this.load.image('case2_5', 'images/case2_5.jpeg');
-        this.load.image('case3_1', 'images/case3_1.jpg');
+        this.load.image('case3_1', 'images/case3_1.png');
         this.load.image('case3_2', 'images/case3_2.png');
         this.load.image('case3_3', 'images/case3_3.png');
-        this.load.image('case3_4', 'images/case3_4.jpg');
+        this.load.image('case3_4', 'images/case3_4.png');
         this.load.image('case3_5', 'images/case3_5.png');
         this.load.image('case3_6', 'images/case3_6.jpeg');
         this.load.image('case3_7', 'images/case3_7.png');
