@@ -97,6 +97,8 @@ next() {
   const timelineEvent = this.scene.timeline[this.scene.timelineIndex++];
 
   switch (timelineEvent.type) {
+    case 'orakuru': 
+      this.dialogBox.destroy();
     case 'dialog':  // ダイアログイベント
       if (timelineEvent.actorName) {
         // actorNameが設定されていたら名前を表示

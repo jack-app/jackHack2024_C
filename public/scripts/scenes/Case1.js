@@ -37,11 +37,13 @@ export class MainScene extends Phaser.Scene {
         this.load.image('case1_5', 'images/case1_5.png');
         this.load.image('case1_6', 'images/case1_6.png');
         this.load.image('case1_7', 'images/case1_7.png');
+        this.load.image('case1_orakuru', 'images/オラクル１.png');
         this.load.image('case2_1', 'images/case2_1.png');
         this.load.image('case2_2', 'images/case2_2.jpeg');
         this.load.image('case2_3', 'images/case2_3.png');
         this.load.image('case2_4', 'images/case2_4.jpeg');
         this.load.image('case2_5', 'images/case2_5.jpeg');
+        this.load.image('case2_orakuru', 'images/オラクル２.png');
         this.load.image('case3_1', 'images/case3_1.png');
         this.load.image('case3_2', 'images/case3_2.png');
         this.load.image('case3_3', 'images/case3_3.png');
@@ -50,6 +52,7 @@ export class MainScene extends Phaser.Scene {
         this.load.image('case3_6', 'images/case3_6.jpeg');
         this.load.image('case3_7', 'images/case3_7.png');
         this.load.image('case3_8', 'images/case3_8.jpeg');
+        this.load.image('case3_orakuru', 'images/オラクル３.png');
         this.load.video('fire', 'video/fire.mp4');
     };
   
