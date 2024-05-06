@@ -43,7 +43,7 @@ export const timelineData = {
     {type: 'dialog', text: '「あのとき注文した商品がそろそろ届くころだ。」 ', actorName: 'ナキ'},
     {type: 'dialog', text: '「発送連絡はまだかな～？」', actorName: 'ナキ'},
     {type: 'dialog', text: 'ふとした気持ちでメールを開いた。すると、こんなメールが受信BOXに届いていた。'},
-    {type:'addForeground', x: 640, y: 360, key: 'case2_2'},
+    {type:'addForeground', x: 640, y: 360, key: 'case2_otani'},
     {type: 'dialog', text: '日本のファンのみんな。私は大谷翔平です。私は日本の小学校にバットを送ろうと考えています😁。私は水原一平にお金を取られてお金がないので🥺私に募金して下さい。私に以下のリンクからお金を送ってくて下さい🥺URL：http://www.koreosuruyatugatidekikikanmottahougaii.bkm', actorName: '大谷翔平？'},
     {type: 'dialog', text: '「大谷さんがお金に困ってる？！', actorName: 'ナキ'},
     {type: 'dialog', text: '「これは絶対に助けないと！」', actorName: 'ナキ'},

@@ -33,7 +33,7 @@ export class StartScene extends Phaser.Scene {
         useHandCursor: true
       });
       zone.on('pointerdown', () => {
-        this.scene.start('Case1', {timelineID:'case2'});  // TitleSceneに遷移
+        this.scene.start('Case1');  // TitleSceneに遷移
       });
 
     }
