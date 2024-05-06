@@ -82,6 +82,8 @@ export const timelineData = {
     {type: 'dialog', text: 'ぽちっ'},
     {type:'addForeground', x: 640, y: 360, key: 'case3_3'},
     {type: 'dialog', text: '「しまったァァッ！詐欺サイトに引っかかってしまったッッ！！！」', actorName: 'ナキ'},
+
+    {type: 'playAudio', key: 'erectro', time: 10},
     {type : 'addForeground', x: 640, y: 360, key: 'case3_4'},
     {type: 'dialog', text: '「危機感を持てと言っただろう？」', actorName: '???'},
     {type: 'case3_3', text: '「だれだお前」', actorName: 'ナキ'},
@@ -95,8 +97,9 @@ export const timelineData = {
     {type:'dialog', text: '「君の危機感は普通では十分なようだが私には勝てるかな？」', actorName: 'ジョージ'},
     {type:'dialog', text: '「ふん上等だ！お前がこれから先、危機感を忘れられないように退治してやる」', actorName: 'ナキ'},
 
-    {type: 'dialog', text: '「さあ最後の決戦だ、お前に危機感を植え付けてやろう。一生忘れられないようにな」', actorName: 'ジョージ'},
+    {type: 'dialog', text: '「さあ最後の決戦だ、お前に危機感を植え付けてやろう。一生忘れられないようになっ」', actorName: 'ジョージ'},
     {type:'dialog', text: '「最後の決戦だ！数々の危機を乗り越えた力ここで見せつけてやる」', actorName: 'ナキ'},
+
     {type: 'addForeground', x: 640, y: 360, key: 'case3_orakuru'},
     {type: 'orakuru'},
     {type: 'playGame'},
@@ -107,15 +110,27 @@ export const timelineData = {
     {type:'addForeground', x: 640, y: 360, key: 'case3_6'},
     {type: 'dialog', text: '「危機感を持った方が良かったのはお前の方だったようだなァッ！！！ジョージーーーッッッ！！！」', actorName: 'ナキ'},
     // ジョージ爆発
-    {type: 'playVideo', x: 640, y: 360, key: 'fire'},
+    {type: 'fire_jyoji', x: 640, y: 360, key: 'fire'},
     {type:'addForeground', x: 640, y: 360, key: 'case3_7'},
     {type: 'dialog', text: '（危機感カンスト）'},
+    {type: 'playAudio', key: 'himei', time: 10},
     {type: 'dialog', text: 'それからというもの樹木ナキは国民栄誉賞に選ばれ、モテモテになった。'},
     {type:'addForeground', x: 640, y: 360, key: 'case3_8'},
     {type: 'dialog', text: '「俺の人生薔薇色だぜぇ～いッ！！最高に『ハイ！』ってやつだアアアアア！」', actorName: 'ナキ'},
     {type: 'dialog', text: '（こうして危機感が次第に薄れていく）', actorName: 'ナキ'},
-    {type: 'dialog', text: '（危機感0％） to be continued ', actorName: 'ナキ'},
-    {type: 'timelineTransition', key: 'case1'}
+    {type:'addForeground', x: 640, y: 360, key: 'black'}, 
+    {type:'dialog', text: '「フフフフフ.......................」', actorName: '???'},
+    {type:'to_be_continued'},
+  
+
+    // ここから黒い画面になる。
+    // {type: 'addForeground', x: 640, y: 360, key: 'black'},
+    // {type: 'dialog', text: '「フフフフフ.......................」', actorName: '???'},
+    // ここからto_be_continued
+    // {type:'playVideo',x:640,y:360,key:'tbc',time:6},
+
+    {type:'sceneTransition', key:'StartScene'},
+
   ],
   case3_lose:[
     {type: 'addForeground', x: 640, y: 360, key: 'case3_lose'},

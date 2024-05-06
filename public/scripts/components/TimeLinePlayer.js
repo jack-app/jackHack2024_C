@@ -61,15 +61,28 @@ clearForeground() {
 }
 
 // videoを再生する
-playVideo(x, y, texture) {
+playVideo(x, y, texture,time) {
   // videoのオブジェクトを作成
   const video = this.scene.add.video(x, y, texture);
   // videoを再生
   video.play(true);
-  // 5秒待つ
-  this.scene.time.delayedCall(3000, () => {
+  // time秒待つ
+  this.scene.time.delayedCall(time*1000, () => {
     // レイヤーからvideoを削除
     video.destroy();
+  });
+}
+
+// audioを再生する  
+playAudio(texture,time) {
+  // audioのオブジェクトを作成
+  var audio = this.scene.sound.add(texture);
+  // audioを再生
+  audio.play();
+  // time秒待つ
+  this.scene.time.delayedCall(time*1000, () => {
+    // audioを停止
+    audio.stop();
   });
 }
 
@@ -151,12 +164,27 @@ next() {
     case 'playGame':
       this.scene.scene.start('GameScene');
     
-    case 'playVideo':  // 動画再生イベント
-      this.playVideo(timelineEvent.x, timelineEvent.y, timelineEvent.key);
+    case 'fire_jyoji':  // 動画再生イベント
+      this.playVideo(timelineEvent.x, timelineEvent.y, timelineEvent.key,3);
+      this.playAudio('fire_bgm',3);
       this.next();  // すぐに次のタイムラインを実行する
       break;
-  
 
+    case 'playAudio':  // 音声再生イベント
+      this.playAudio(timelineEvent.key);
+      this.next();  // すぐに次のタイムラインを実行する
+      break;
+
+    case 'playVideo':
+      // this.dialogBox.setVisible(false);
+      this.playVideo(timelineEvent.x, timelineEvent.y, timelineEvent.key,'tbc');
+      this.next();  // すぐに次のタイムラインを実行する
+  
+    case 'to_be_continued':  // 続くイベント
+      this.playVideo(640, 360, 'tbc',6);
+      this.playAudio('to_be_continued',10);
+      // this.next();  // すぐに次のタイムラインを実行する
+  
 
     
 

@@ -13,7 +13,7 @@ export class MainScene extends Phaser.Scene {
       // this.scene.restart()の第1引数もしくは
       // this.scene.start()の第2引数に指定されたオブジェクトがdataに渡される
       // デバックはこのデフォルト値を変える
-      const timelineID = data.timelineID || 'case1';
+      const timelineID = data.timelineID || 'case3_win';
   
       if (!(timelineID in timelineData)) {
         console.error(`[ERROR] タイムラインID[${timelineID}]は登録されていません`);
@@ -29,7 +29,6 @@ export class MainScene extends Phaser.Scene {
     }
     preload() {
         console.log('preload');
-        this.load.image('CIA','images/CIA.jpg');
         this.load.image('case1_1', 'images/case1_1.png');
         this.load.image('case1_2', 'images/case1_2.png');
         this.load.image('case1_3', 'images/case1_3.jpg');
@@ -53,10 +52,20 @@ export class MainScene extends Phaser.Scene {
         this.load.image('case3_6', 'images/case3_6.jpeg');
         this.load.image('case3_7', 'images/case3_7.png');
         this.load.image('case3_8', 'images/case3_8.jpeg');
+
+        this.load.image('case3_9', 'images/case3_9.png');
+        this.load.image('black', 'images/black.png');
+
         this.load.image('case3_orakuru', 'images/オラクル３.png');
         this.load.image('case3_win', 'images/win.png');
         this.load.image('case3_lose', 'images/lose.png');
+
         this.load.video('fire', 'video/fire.mp4');
+        this.load.video('tbc','video/tbc.mp4');
+        this.load.audio('to_be_continued', 'audio/to_be_continued.mp3');
+        this.load.audio('erectro', 'audio/erectro.mp3');
+        this.load.audio('fire_bgm', 'audio/fire_bgm.mp3');
+        this.load.audio('himei', 'audio/himei.mp3');
     };
   
     create() {
