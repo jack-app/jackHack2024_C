@@ -109,6 +109,7 @@ next() {
   // タイムラインのイベントを取得してから、timelineIndexをインクリメント
   const timelineEvent = this.scene.timeline[this.scene.timelineIndex++];
 
+  // this.dialogBox.setVisible(true);
   switch (timelineEvent.type) {
     case 'dialog':  // ダイアログイベント
       if (timelineEvent.actorName) {
@@ -173,13 +174,14 @@ next() {
       break;
 
     case 'playVideo':
-      this.playVideo(timelineEvent.x, timelineEvent.y, timelineEvent.key,timelineEvent.time);
+      // this.dialogBox.setVisible(false);
+      this.playVideo(timelineEvent.x, timelineEvent.y, timelineEvent.key,'tbc');
+      this.next();  // すぐに次のタイムラインを実行する
   
     case 'to_be_continued':  // 続くイベント
       this.playVideo(640, 360, 'tbc',6);
-      this.addForeground(640, 360, 'case3_9');
       this.playAudio('to_be_continued',10);
-      this.next();  // すぐに次のタイムラインを実行する
+      // this.next();  // すぐに次のタイムラインを実行する
   
 
     

@@ -112,10 +112,17 @@ export const timelineData = {
     {type:'addForeground', x: 640, y: 360, key: 'case3_8'},
     {type: 'dialog', text: '「俺の人生薔薇色だぜぇ～いッ！！最高に『ハイ！』ってやつだアアアアア！」', actorName: 'ナキ'},
     {type: 'dialog', text: '（こうして危機感が次第に薄れていく）', actorName: 'ナキ'},
-    {type:}
+    {type:'addForeground', x: 640, y: 360, key: 'black'}, 
+    {type:'dialog', text: '「フフフフフ.......................」', actorName: '???'},
+    {type:'to_be_continued'},
+  
+
+    // ここから黒い画面になる。
+    // {type: 'addForeground', x: 640, y: 360, key: 'black'},
+    // {type: 'dialog', text: '「フフフフフ.......................」', actorName: '???'},
     // ここからto_be_continued
-    {type:'playVideo' , x: 640, y: 360, key: 'tbc',time:6},
-    {type: 'dialog', text: 'to be continued….'},
+    // {type:'playVideo',x:640,y:360,key:'tbc',time:6},
+
     {type:'sceneTransition', key:'StartScene'},
 
   ],
